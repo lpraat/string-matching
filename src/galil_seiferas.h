@@ -4,12 +4,10 @@
 #include <string>
 #include <cmath>
 
-class GalilSeiferas {
+class GalilSeiferas : StringMatcher{
 
 private:
     uint32 p, q, s, p1, q1, p2, q2;
-    std::string pat;
-    uint32 patLength;
 
     uint32 k = 4;
     uint32 offset;
@@ -18,8 +16,7 @@ private:
 
 public:
 
-    explicit GalilSeiferas(const std::string &pat) : pat(pat), p{0}, q{0}, s{0}, p1{1}, q1{0}, p2{0}, q2{0} {
-        patLength = pat.length();
+    explicit GalilSeiferas(const std::string &pat) : StringMatcher(pat), p{0}, q{0}, s{0}, p1{1}, q1{0}, p2{0}, q2{0} {
     }
 
     void newp1(const std::string &text) {
@@ -78,7 +75,7 @@ public:
         newp1(text);
     }
 
-    bool searchIn(const std::string &text, uint32 *offset) {
+    bool searchIn(const std::string &text, uint32 *offset) override {
         found = false;
         newp1(text);
 

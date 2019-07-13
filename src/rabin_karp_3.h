@@ -5,13 +5,10 @@
 #include "string_matcher.h"
 #include <vector>
 #include <string>
-#include <cmath>
 
 class RabinKarp3 : StringMatcher {
 
 private:
-    uint32 patLength;
-
     uint32 patHash = 0;
     uint32 textHash = 0;
 
@@ -23,7 +20,6 @@ private:
 
 public:
     explicit RabinKarp3(const std::string& pat) : StringMatcher(pat) {
-        patLength = pat.length();
     }
 
     void preprocess(const std::string& text, uint32 start) {

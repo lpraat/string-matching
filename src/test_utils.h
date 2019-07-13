@@ -2,9 +2,7 @@
 
 #include "core_types.h"
 #include <string>
-#include <iostream>
 #include <vector>
-#include <cassert>
 
 const char* alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-";
 

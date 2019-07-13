@@ -1,10 +1,6 @@
 #include "core_types.h"
 #include "test_utils.h"
 #include "boyer_moore.h"
-#include "rabin_karp_3.h"
-#include "rabin_karp_1.h"
-#include "galil_seiferas.h"
-#include "naive.h"
 #include "boyer_moore_simple.h"
 #include <vector>
 #include <string>

@@ -1,5 +1,4 @@
 #include "test_utils.h"
-#include <iostream>
 #include "boyer_moore.h"
 #include "rabin_karp_3.h"
 #include "galil_seiferas.h"
@@ -7,6 +6,7 @@
 #include "rabin_karp_1.h"
 #include "boyer_moore_simple.h"
 #include "naive.h"
+#include <iostream>
 
 
 template <typename T>
@@ -29,6 +29,7 @@ void test() {
             std::cout << "Failed at " << std::endl;
             std::cout << "Text is " << text << std::endl;
             std::cout << "Pattern is " << pattern << std::endl;
+            throw std::runtime_error("error");
         } else {
             if (offset != realOffset) {
                 std::cout << "Failed at " << std::endl;
