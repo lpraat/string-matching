@@ -24,7 +24,7 @@ public:
             delta1[i] = patLength;
         }
 
-        // why i < patLength - 1? because if i = patlength - i
+        // why i < patLength - 1? because if i = patlength - 1
         // delta1[pat[i]] = patLength - (patLength - 1) - 1 = 0 which means no shift
         for (uint32 i = 0; i < patLength - 1; i++) {
             delta1[pat[i]] = patLength - i - 1;
