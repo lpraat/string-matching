@@ -3,7 +3,6 @@
 #include "core_types.h"
 #include <string>
 #include <cmath>
-#include <cstring>
 
 class GalilSeiferas {
 
@@ -19,7 +18,7 @@ private:
 
 public:
 
-    GalilSeiferas(const std::string &pat) : pat(pat), p{0}, q{0}, s{0}, p1{1}, q1{0}, p2{0}, q2{0} {
+    explicit GalilSeiferas(const std::string &pat) : pat(pat), p{0}, q{0}, s{0}, p1{1}, q1{0}, p2{0}, q2{0} {
         patLength = pat.length();
     }
 

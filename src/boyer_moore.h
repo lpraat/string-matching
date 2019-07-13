@@ -96,16 +96,4 @@ public:
         }
         return false;
     }
-
-    const std::vector<uint32>& getDelta1() const {
-        return delta1;
-    }
-
-    const std::vector<uint32>& getDelta2() const {
-        return delta2;
-    }
-
-    const std::string& getPat() const {
-        return pat;
-    }
 };

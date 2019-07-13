@@ -1,10 +1,10 @@
-#include "core_types.h"
-#include "test_utils.h"
-#include "boyer_moore.h"
-#include "rabin_karp_3.h"
-#include "rabin_karp_1.h"
-#include "galil_seiferas.h"
-#include "naive.h"
+#include "src/core_types.h"
+#include "src/test_utils.h"
+#include "src/boyer_moore.h"
+#include "src/rabin_karp_3.h"
+#include "src/rabin_karp_1.h"
+#include "src/galil_seiferas.h"
+#include "src/naive.h"
 #include <vector>
 #include <string>
 #include <chrono>

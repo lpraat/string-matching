@@ -1,22 +1,14 @@
+"""
+BoyerMoore vs Naive vs GalilSeiferas execution time
+"""
 import matplotlib.pyplot as plt
+
+from plot_utils import generate_legend_label
 
 text_lengths = [100000000]
 pattern_lengths = [5, 10, 25, 50, 100, 300, 500, 750, 1000, 2500, 5000, 10000, 15000, 20000, 50000]
 
-# Either boyer_moore, galil-seiferas or karp rabin
 algs = ['boyer_moore', 'naive',  'galil_seiferas']
-
-
-def generate_legend_label(i):
-
-    if int(i) * 1e-6 >= 1:
-        return str(int(i * 1e-6)) + "M"
-
-    if int(i) * 1e-3 >= 1:
-        return str(int(i * 1e-3)) + "k"
-
-    return str(i)
-
 
 for text_len in text_lengths:
     for alg in algs:

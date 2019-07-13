@@ -1,20 +1,13 @@
+"""
+BoyerMoore vs BoyerMooreSimple(no delta2) execution time
+"""
 import matplotlib.pyplot as plt
+
+from plot_utils import generate_legend_label
 
 alphabet_lengths = [2, 64]
 pattern_lengths = [5, 10, 25, 50, 100, 300, 500, 750, 1000, 2500, 5000, 10000, 15000, 20000, 50000]
 algs = ['boyer_moore_simple', 'boyer_moore']
-
-
-def generate_legend_label(i):
-
-    if int(i) * 1e-6 >= 1:
-        return str(int(i * 1e-6)) + "M"
-
-    if int(i) * 1e-3 >= 1:
-        return str(int(i * 1e-3)) + "k"
-
-    return str(i)
-
 
 for alphabet_len in alphabet_lengths:
     for alg in algs:

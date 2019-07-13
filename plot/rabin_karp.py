@@ -1,22 +1,14 @@
+"""
+RabinKarp1 vs RabinKarp2 vs RabinKarp3 execution time
+"""
 import matplotlib.pyplot as plt
+
+from plot_utils import generate_legend_label
 
 text_lengths = [100000]
 pattern_lengths = [25, 50, 100, 300, 500]
 
 algs = ['rabin_karp1', 'rabin_karp2', 'rabin_karp3']
-
-
-def generate_legend_label(i):
-
-    if int(i) * 1e-6 >= 1:
-        print(i * 1e-6)
-        return str(int(i * 1e-6)) + "M"
-
-    if int(i) * 1e-3 >= 1:
-        return str(int(i * 1e-3)) + "k"
-
-    return str(i)
-
 
 for text_len in text_lengths:
     for alg in algs:

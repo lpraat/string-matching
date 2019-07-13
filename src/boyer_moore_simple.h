@@ -1,9 +1,10 @@
 #pragma once
 
-#include <vector>
-#include <string>
 #include "core_types.h"
 #include "string_matcher.h"
+#include <vector>
+#include <string>
+
 
 class BoyerMooreSimple : StringMatcher {
 
@@ -60,17 +61,5 @@ public:
             k += delta1[text[k]];
         }
         return false;
-    }
-
-    const std::vector<uint32>& getDelta1() const {
-        return delta1;
-    }
-
-    const std::vector<uint32>& getDelta2() const {
-        return delta2;
-    }
-
-    const std::string& getPat() const {
-        return pat;
     }
 };

@@ -1,3 +1,7 @@
+# Editor
 .idea
 cmake-build-debug
 .DS_Store
+
+# Python
+__pycache__

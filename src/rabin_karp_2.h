@@ -1,12 +1,11 @@
 #pragma once
 
-#include <vector>
-#include <string>
-#include <cmath>
 #include "core_types.h"
 #include "utils.h"
 #include "string_matcher.h"
-#include <iostream>
+#include <vector>
+#include <string>
+#include <cmath>
 
 class RabinKarp2 : StringMatcher {
 

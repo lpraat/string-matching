@@ -1,8 +1,9 @@
 #pragma once
-#include <vector>
-#include <string>
+
 #include "core_types.h"
 #include "string_matcher.h"
+#include <vector>
+#include <string>
 
 
 class Naive : StringMatcher {
