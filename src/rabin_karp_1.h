@@ -20,6 +20,8 @@ private:
 
     uint32 M = 1024;
 
+    uint32 base = 2;
+
 public:
     explicit RabinKarp1(const std::string& pat, uint32 k = 10) : k(k), StringMatcher(pat), patHash(k), textHash(k), p(k), firstPower(k) {
     }
@@ -33,7 +35,7 @@ public:
         for (uint32 i = 0; i < k; i++) {
             firstPower[i] = 1;
             for (uint32 _ = 0; _ < patLength - 1; _++) {
-                firstPower[i] = (2 * firstPower[i]) % p[i];
+                firstPower[i] = (base * firstPower[i]) % p[i];
             }
         }
 
@@ -41,8 +43,8 @@ public:
         //#pragma omp parallel for schedule(static)
         for (uint32 i = 0; i < k ; i++) {
             for (uint32 j = 0; j < patLength; j++) {
-                patHash[i] = (2 * patHash[i] + pat[j]) % p[i];
-                textHash[i] = (2 * textHash[i] + text[j]) % p[i];
+                patHash[i] = (base * patHash[i] + pat[j]) % p[i];
+                textHash[i] = (base * textHash[i] + text[j]) % p[i];
             }
         }
     }
@@ -53,7 +55,7 @@ public:
         //#pragma omp parallel for schedule(static)
         for (uint32 j = 0; j < k; j++) {
             textHash[j] = (textHash[j] + p[j] - (text[i] * firstPower[j]) % p[j]) % p[j];
-            textHash[j] = (textHash[j] * 2 + text[i + patLength]) % p[j];
+            textHash[j] = (textHash[j] * base + text[i + patLength]) % p[j];
         }
     }
 

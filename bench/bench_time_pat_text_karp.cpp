@@ -16,7 +16,7 @@ void benchStringMatcher(const std::string& fileName, uint32 numSamples = 30) {
 
 
     for (uint32 i = 0; i < textLenghts.size(); i++) {
-        std::string fName = "/Users/lpraat/develop/aapp/plot/data/tpt/";
+        std::string fName = "/Users/lpraat/develop/string-matching/plot/data/tpt/";
         fName += std::to_string(textLenghts[i]);
         fName += fileName;
 

@@ -18,6 +18,8 @@ private:
 
     uint32 M = 1024;
 
+    uint32 base = 2;
+
 
 public:
     explicit RabinKarp2(const std::string& pat) : StringMatcher(pat) {
@@ -29,13 +31,13 @@ public:
 
         firstPower = 1;
         for (uint32 _ = 0; _ < patLength - 1; _++) {
-            firstPower = (2 * firstPower) % p;
+            firstPower = (base * firstPower) % p;
         }
 
 
         for (uint32 i = 0; i < patLength; i++) {
-            patHash = (2 * patHash + pat[i]) % p;
-            textHash = (2 * textHash + text[i]) % p;
+            patHash = (base * patHash + pat[i]) % p;
+            textHash = (base * textHash + text[i]) % p;
         }
     }
 
@@ -45,7 +47,7 @@ public:
         // textHash = textHash % p;
         // could go negative in the first parenthesis
         textHash = (textHash + p - firstPower*text[i] % p) % p;
-        textHash = (textHash * 2 + text[i+patLength]) % p;
+        textHash = (textHash * base + text[i+patLength]) % p;
     }
 
 

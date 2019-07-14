@@ -16,7 +16,7 @@ void benchStringMatcher(const std::string& fileName, uint32 numSamples = 30) {
 
 
     for (uint32 i = 0; i < alphabetLengths.size(); i++) {
-        std::string fName = "/Users/lpraat/develop/aapp/plot/data/alpha/";
+        std::string fName = "/Users/lpraat/develop/string-matching/data/alpha/";
         fName += std::to_string(alphabetLengths[i]);
         fName += fileName;
 

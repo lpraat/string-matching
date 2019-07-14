@@ -25,10 +25,10 @@ for text_len in text_lengths:
             plt.xticks([i for i in range(len(pattern_lengths))], [generate_legend_label(i) for i in pattern_lengths])
 
 
-plt.title("Alphabet size = 64, Text Size = 100k, Rabin karp")
-plt.xlabel('Pattern length')
+plt.title("Alphabet size = 64, Text Length = 100k")
+plt.xlabel('Random Pattern Length')
 plt.tight_layout()
 plt.ylabel('Execution time - log scale (milliseconds)')
 plt.yscale('log')
-plt.legend(title="Algorithm - Text Length", loc='best')
+plt.legend(title="Algorithm", loc='best')
 plt.show()
